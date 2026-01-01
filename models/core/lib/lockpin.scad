@@ -135,7 +135,7 @@ module end_parts(grip_type = "standard") {
 module end_part_half(front = false) {
 
   lockpin_fillet_front = lockpin_width_outer / 3;
-  lockpin_endpart_dimension = [lockpin_width_outer, lockpin_height, lockpin_endpart_length]; // cubic
+  lockpin_endpart_dimension = [lockpin_width_outer, lockpin_height, front ? lockpin_endpart_length + BASE_STRENGTH : lockpin_endpart_length]; // cubic
 
   translate([0, 0, lockpin_prismoid_length + lockpin_endpart_length / 2 - TOLERANCE/2])
   color(HR_BLUE)
